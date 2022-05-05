@@ -1,3 +1,43 @@
 body{
     background-color: aquamarine;
 }
+.grid-container {  display: grid;
+    grid-template-columns: 0.7fr 1.7fr 0.6fr;
+    grid-template-rows: 0.2fr 1.6fr 1fr;
+    gap: 6px 6px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Logo . my_profile"
+      "mt date task_list"
+      "mt read_list task_list";
+}
+  
+.Logo { 
+    //justify-self: center; 
+    align-self: stretch; 
+    grid-area: Logo;  
+    img{
+        width: 100px;
+    }
+}
+  
+.my_profile { 
+    grid-area: my_profile; 
+}
+  
+.date { 
+    grid-area: date; 
+}
+  
+.read_list { 
+    grid-area: read_list; 
+}
+  
+.task_list { 
+    grid-area: task_list; 
+}
+  
+.mt { 
+    grid-area: mt; 
+}
+  
