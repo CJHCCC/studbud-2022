@@ -2,7 +2,6 @@ let timef = 0;
 let times = 0;
 let timem = 0;
 let zt_ks = false;
-let fg = Array();
 //timer
 setInterval(() => {
     if (zt_ks)

@@ -1,5 +1,5 @@
 body{
-    background-color: aquamarine;
+    background-color: #F4F9F8;
 }
 
 .grid-container {  
@@ -34,6 +34,16 @@ body{
   
 .read_list { 
     grid-area: read_list; 
+    background-color: #fff;
+    width: 600px;
+    padding: 0 20px;
+    //position:absolute;
+    left:40%;
+    padding: 10px;
+    ul{
+        margin: 0 10px;
+        padding: 0 10px;
+    }
 }
   
 .task_list { 
@@ -106,10 +116,54 @@ body{
         }
     }
 
-    .p{
-        color:#03a9f4;
-        background-color: #fff;
-        margin-left: 30px;
+
+    .box2 {
+        width: 200px;
+        height: 30px;
+        margin: 0 50px 30px;
+        margin-top: 0px;
+    }  
+
+    .boxx2 {
+        width: 20px;
+        height: 49px;
+        float: left;
+        color: #000;
+        font-size: 50px;
+        text-align: center;
+        line-height: 40px;
     }
+    .butt2{
+        margin: 0 20px;
+        height: 60px;
+        width: 200px;
+        margin-top: -25px;       
+    }
+
+    .butt2 input {
+        width: 55px;
+        height: 20px;
+        border: 1px #fff solid;
+        background-color: #000;
+        color: #fff;
+        font-size: 10px;
+        cursor: pointer;
+
+        &:hover{
+            color:#000;
+            background-color: #fff;
+        }
+    }
+
+    .textPom{
+        display: flex;
+        align-items: center;
+    }
+
+    svg{
+        margin-right: 2px;
+    }
+
+
 }
   
