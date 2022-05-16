@@ -1,6 +1,6 @@
 let PomS = sec;
-let PomM = document.querySelectorAll("input")[0];
-let PomB = document.querySelectorAll("input")[2];
+let PomM = document.querySelectorAll("input")[1];
+let PomB = document.querySelectorAll("input")[3];
 let fg = Array();
 let fb = Array();
 var btnStart=document.getElementById("btnStart");
@@ -32,7 +32,7 @@ PomB.value=5;
 timer=setInterval(function(){
 if(is_cal){
     if(PomS.value>=1 && PomM.value>=0){
-        PomS.value-=20
+        PomS.value--
         document.getElementById("psec").innerHTML = PomS.value;
     }
 
