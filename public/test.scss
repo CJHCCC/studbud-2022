@@ -1,0 +1,194 @@
+
+body{
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #F4F9F8;
+}
+/* 头部 */
+.Logo{
+  display: flex;
+  flex: 1;
+  flex-shrink: 0;
+  height: 70px;
+  background: #F4F9F8;
+  width: 100%;
+  img{
+    width: 200px;
+    height: 47.5px;
+    margin-left: 10px;
+    padding: 10px;
+  }
+}
+
+/* 主内容 */
+.main{
+  display: flex;
+  flex: 1;
+  height: calc(100% - 100px);
+  justify-content: center;
+}
+
+/* 左边布局 */
+.mt{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 320px;
+  background: #00d994;
+  margin-left: 10px;
+    margin-top: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+    figure {
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 0px;
+    figcaption{
+        margin-bottom: 20px;
+    }
+    } 
+
+    .time {
+        width: 49px;
+        height: 49px;
+        background-color: #000;
+        line-height: 50px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        border: 1px #fff solid;
+        float: left;
+    }
+
+    .box {
+        width: 200px;
+        height: 30px;
+        margin: 0 10px;
+        margin-top: 0px;
+    }  
+
+    .boxx {
+        width: 20px;
+        height: 49px;
+        float: left;
+        color: #000;
+        font-size: 50px;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .butt {
+        margin: 0 20px;
+        height: 20px;
+        width: 200px;
+        margin-top: 30px;
+    }
+
+    .butt button {
+        width: 55px;
+        height: 20px;
+        border: 1px #fff solid;
+        background-color: #000;
+        color: #fff;
+        font-size: 10px;
+        cursor: pointer;
+
+        &:hover{
+            color:#000;
+            background-color: #fff;
+        }
+    }
+
+
+    .box2 {
+        width: 200px;
+        height: 30px;
+        margin: 0 50px 30px;
+        margin-top: 0px;
+    }  
+
+    .boxx2 {
+        width: 20px;
+        height: 49px;
+        float: left;
+        color: #000;
+        font-size: 50px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .butt2{
+        margin: 0 20px;
+        height: 60px;
+        width: 200px;
+        margin-top: -25px;       
+    }
+
+    .butt2 input {
+        width: 55px;
+        height: 20px;
+        border: 1px #fff solid;
+        background-color: #000;
+        color: #fff;
+        font-size: 10px;
+        cursor: pointer;
+
+        &:hover{
+            color:#000;
+            background-color: #fff;
+        }
+    }
+
+    .textPom{
+        display: flex;
+        align-items: center;
+    }
+
+    svg{
+        margin-right: 2px;
+    }
+}
+
+/* 中间布局 */
+.center{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 620px;
+  background: #0D2457;
+
+  /* 时间 */
+  .date{
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    background: #0C0C0C;
+  }
+
+  /* readinglist */
+  .read_list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #0C51ED;
+    left: 40%;
+    padding: 10px;
+    ul{
+      padding: 0 10px;
+      padding-left: 0;
+      li{
+        display: flex;
+      }
+    }
+  }
+}
+
+/* 右边布局 */
+.task_list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 320px;
+  background: #30A3FF;
+}
