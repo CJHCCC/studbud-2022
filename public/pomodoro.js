@@ -37,7 +37,7 @@ PomB.value=5;
 timer=setInterval(function(){
 if(is_cal){
     if(PomS.value>=1 && PomM.value>=0){
-        PomS.value-=30;
+        PomS.value--;
         document.getElementById("psec").innerHTML = PomS.value;
     }
 

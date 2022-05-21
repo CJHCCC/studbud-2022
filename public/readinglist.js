@@ -48,6 +48,7 @@ function renderreading(reading) {
     // Extra reading DOM elements
     let delButton = document.createElement("button");
     let delButtonText = document.createTextNode("Delete reading");
+    delButton.setAttribute("style", "flex-shrink: 0; height: 24px; align-self: center;");
     delButton.appendChild(delButtonText);
     item.appendChild(delButton);
 
@@ -79,7 +80,20 @@ function removeItemFromArray(arr, index) {
 function updateEmpty() {
     if (readinglistArray.length > 0) {
         document.getElementById('emptyList').style.display = 'none';
+        document.getElementById('openAll').style.display = 'block';
     } else {
         document.getElementById('emptyList').style.display = 'block';
+        document.getElementById('openAll').style.display = 'none';
     }
 }
+
+//Open all link from reading list
+var openAllBtn = document.getElementById("openAll");
+openAllBtn.addEventListener("click", function(){
+    if (readinglistArray.length > 0) {
+        readinglistArray.forEach(function(item){
+            window.open(item.readingDescription, '_blank');
+        });
+        
+    }
+});
