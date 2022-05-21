@@ -28,6 +28,7 @@ body{
   flex: 1;
   height: calc(100% - 100px);
   justify-content: center;
+  margin-top: 20px;
 }
 
 /* 左边布局 */
@@ -38,7 +39,6 @@ body{
   max-width: 320px;
   background: #00d994;
   margin-left: 10px;
-    margin-top: 20px;
     padding-left: 20px;
     background-color: #fff;
     figure {
@@ -156,14 +156,14 @@ body{
   flex-direction: column;
   flex: 1;
   max-width: 620px;
-  background: #0D2457;
-
+  margin: 0 10px;
   /* 时间 */
   .date{
     display: flex;
     flex-direction: column;
-    height: 320px;
-    background: #0C0C0C;
+    color: #333;
+    padding: 12px;
+    background-color: #fff;
   }
 
   /* readinglist */
@@ -171,14 +171,16 @@ body{
     display: flex;
     flex-direction: column;
     flex: 1;
-    background: #0C51ED;
+    background: #fff;
     left: 40%;
     padding: 10px;
+    margin-top: 10px;
     ul{
       padding: 0 10px;
       padding-left: 0;
       li{
         display: flex;
+        margin-top: 10px;
       }
     }
   }
@@ -190,5 +192,22 @@ body{
   flex-direction: column;
   flex: 1;
   max-width: 320px;
-  background: #30A3FF;
+  .sort{
+    display: flex;
+    #dueSort {
+      width: 50%;
+    }
+    #rateSort{
+      width: 50%;
+    }
+  }
+  ul{
+    list-style-type: none;
+    padding: 0;
+    li{
+      background-color: #fff;
+      margin-top: 10px;
+      padding: 8px;
+    }
+  }
 }

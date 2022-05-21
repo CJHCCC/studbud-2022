@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="test.scss">
   <link rel="stylesheet" href="font-awesome.css">
   <link rel="stylesheet" href="scss/pomodoro.scss">
+  <link rel='stylesheet' href='c.scss' />
+  <link rel='stylesheet' href='tasklist.scss' />
 </head>
 
 <body>
@@ -50,10 +52,10 @@
         <div class="boxx2">:</div>
         <div id="psec" class="time"></div>
       </div>
-    
-      <p>Work:  <input type="text" id="min" value="25"></p>
+      <p>Round <span id="round">0</span></p>
+      <p style="margin-bottom: 0px;"><span id="timerWork">Work: </span><input type="text" id="min" value="25"></p>
       <p class="needH">sec:<input type="text" id="sec" value="0"></p>
-      <p>Break:<input type="text" id="br" value="5"></p>
+      <p><span id="timerBreak">Break:</span><input type="text" id="br" value="5"></p>
       <br/>
 
       <div class="butt2">
@@ -70,7 +72,7 @@
 
     <div class="center">
       <div class="date">
-
+        <div class='calendar' id='calendar'></div>
 
       </div>
       <div class="read_list">
@@ -86,6 +88,7 @@
           <p id="emptyList">You have not added any reading yet.</p>
           <ul>    
           </ul>
+          <button id="openAll" style="display: none;">OPEN ALL LINK</button>
         </div>
         <script src="readinglist.js"></script>
 
@@ -93,12 +96,55 @@
     </div>
 
     <div class="task_list">
-      <button>Add Task</button>
-
+      <div class="sort">
+        <button id="dueSort">due</button>
+        <button id="rateSort">rate</button>
+      </div>
+      <button id="addTaskList">Add Task <i class="fas fa-plus-circle"></i></button>
+      <div id="tasklist">
+        <p id="emptyTaskList">You have not added any tasks yet.</p>
+        <ul></ul>
+      </div>
     </div>
   </div>
 
 
+
+  <div id='addTaskContent' class="page-container">
+    <h1>Tasks</h1>
+    <div id="task-grid">
+      <form id="taskform">
+        <label for="task">Task:</label>
+        <input type="text" name="task" id="taskInput" required>
+  
+        <!-- Date input -->
+        <label for="dueDate">Due Date: </label>
+        <input type="date" name="dueDate" id="dueDateInput">
+  
+        <!-- Time input -->
+        <label for="completionTime">Completion Time: </label>
+        <input type="time" name="completionTime" id="completionTimeInput">
+  
+        <label for="estimatedTime">Estimated completion time (in mins):</label>
+        <input type="number" name="estimatedTime" id="estimatedTimeInput">
+        <!-- Priority -->
+  
+  
+        <label for="priority">Task Priority:</label>
+        <select name="prority" id="priorityInput">
+          <option value="">Select one</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+  
+        <br>
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  
+  </div>
 </body>
 
 
@@ -107,8 +153,8 @@
 <a href="c.html">C</a>
 <a href="readinglist.html">readinglist</a>
 <a href="test.html">test</a>
-
-
+<script type='text/javascript' src='c.js'></script>
+<script type='text/javascript' src='tasklist.js'></script>
 </body>
 
 <!--<script src="script.js"></script>!-->
