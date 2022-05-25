@@ -9,7 +9,7 @@ var readinglist = document.querySelector("#readinglist > ul");
 var readingInput = document.getElementById("readingInput");
 
 // Form submission event listener
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
     event.preventDefault();
     let reading = readingInput.value;
     if (reading) {
@@ -54,7 +54,7 @@ function renderreading(reading) {
 
 
     // Event Listeners for DOM elements
-    delButton.addEventListener("click", function(event) {
+    delButton.addEventListener("click", function (event) {
         event.preventDefault();
         let id = event.target.parentElement.getAttribute('data-id');
         let index = readinglistArray.findIndex(reading => reading.id === Number(id));
@@ -89,11 +89,10 @@ function updateEmpty() {
 
 //Open all link from reading list
 var openAllBtn = document.getElementById("openAll");
-openAllBtn.addEventListener("click", function(){
+openAllBtn.addEventListener("click", function () {
     if (readinglistArray.length > 0) {
-        readinglistArray.forEach(function(item){
+        readinglistArray.forEach(function (item) {
             window.open(item.readingDescription, '_blank');
         });
-        
     }
 });
