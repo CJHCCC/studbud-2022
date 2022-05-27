@@ -1,3 +1,9 @@
+* {
+  button {
+    cursor: pointer;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -11,7 +17,7 @@ body {
   display: flex;
   flex: 1;
   flex-shrink: 0;
-  
+
   height: 70px;
   background: #F4F9F8;
   width: 100%;
@@ -91,16 +97,17 @@ body {
 
   .butt button {
     width: 55px;
-    height: 20px;
+    height: 23px;
     border: 1px #fff solid;
+    border-radius: 8px;
     background-color: #000;
     color: #fff;
     font-size: 10px;
-    cursor: pointer;
 
     &:hover {
       color: #000;
       background-color: #fff;
+      border: #000 solid;
     }
   }
 
@@ -131,8 +138,9 @@ body {
 
   .butt2 input {
     width: 55px;
-    height: 20px;
+    height: 23px;
     border: 1px #fff solid;
+    border-radius: 8px;
     background-color: #000;
     color: #fff;
     font-size: 10px;
@@ -141,6 +149,7 @@ body {
     &:hover {
       color: #000;
       background-color: #fff;
+      border: #000 solid;
     }
   }
 
@@ -181,6 +190,21 @@ body {
     padding: 10px;
     margin-top: 10px;
 
+    .readingButton {
+      padding: 2.5px 20px;
+      border: 1px #fff solid;
+      border-radius: 3px;
+      background-color: #000;
+      color: #fff;
+
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        border: #000 solid;
+        padding: 1.25px 18px;
+      }
+    }
+
     ul {
       padding: 0 10px;
       padding-left: 0;
@@ -188,6 +212,20 @@ body {
       li {
         display: flex;
         margin-top: 30px;
+      }
+    }
+    #openAll{
+      padding: 2.5px 20px;
+      border: 1px #fff solid;
+      border-radius: 3px;
+      background-color: #000;
+      color: #fff;
+
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        border: #000 solid;
+        padding: 1.25px 18px;
       }
     }
   }
@@ -200,15 +238,32 @@ body {
   flex: 1;
   max-width: 320px;
 
+  button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 15px;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+      border: #000 solid;
+    }
+  }
+
   .sort {
     display: flex;
 
     #dueSort {
       width: 50%;
+      margin-right: 5px;
     }
 
     #rateSort {
       width: 50%;
+      margin-left: 5px;
     }
   }
 
@@ -220,6 +275,21 @@ body {
       background-color: #fff;
       margin-top: 10px;
       padding: 8px;
+    }
+
+    button {
+      padding: 5px 20px;
+      border: 1px #fff solid;
+      border-radius: 8px;
+      background-color: #000;
+      color: #fff;
+      font-size: 15px;
+
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        border: #000 solid;
+      }
     }
   }
 }

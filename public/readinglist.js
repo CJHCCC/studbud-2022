@@ -47,9 +47,10 @@ function renderreading(reading) {
 
     // Extra reading DOM elements
     let delButton = document.createElement("button");
-    let delButtonText = document.createTextNode("Delete reading");
-    delButton.setAttribute("style", "flex-shrink: 0; height: 24px; align-self: center;");
-    delButton.appendChild(delButtonText);
+    let delButton_Icon = document.createElement("i");
+    delButton_Icon.className = "fas fa-minus-circle";
+    delButton.setAttribute("style", "background-color: #fff; align-self: center; border: none; margin-left: 10px; font-size: 20px;");
+    delButton.appendChild(delButton_Icon);
     item.appendChild(delButton);
 
 

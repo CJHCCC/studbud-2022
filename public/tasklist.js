@@ -1,14 +1,23 @@
 // 点击添加任务
 const addTaskBtn = document.getElementById("addTaskList");
 var addTaskContent = document.getElementById("addTaskContent");
+var checkTaskContent = false;
 addTaskContent.style.display = "block";
 addTaskContent.style.top = (addTaskBtn.offsetTop+addTaskBtn.offsetHeight)+"px";
 addTaskContent.style.left = (addTaskBtn.offsetLeft)+"px";
 addTaskBtn.addEventListener("click", function(e){
+    if(checkTaskContent){
     var addTaskContent = document.getElementById("addTaskContent");
     addTaskContent.style.display = "block";
     addTaskContent.style.top = (addTaskBtn.offsetTop+addTaskBtn.offsetHeight)+"px";
     addTaskContent.style.left = (addTaskBtn.offsetLeft)+"px";
+    checkTaskContent = false;
+    }
+    else{
+        var addTaskContent = document.getElementById("addTaskContent");
+        addTaskContent.style.display = "none";
+        checkTaskContent = true;
+    } 
 });
 
 
@@ -39,6 +48,7 @@ taskform.addEventListener("submit", function(event) {
         addTask(task, dueDate, estimatedTime, priorityRating, completionTime, false);
         var addTaskContent = document.getElementById("addTaskContent");
         addTaskContent.style.display = "none";
+        checkTaskContent = true;
     }
 })
 
@@ -101,17 +111,19 @@ function renderTask(task) {
 
     tasklist.appendChild(item);
 
+    // Give and div. Delet and finish button
     let div = document.createElement("div");
+    div.style.marginTop = "20px";
     div.style.display = "flex"; 
     div.style.justifyContent = "space-between";
-    // Extra Task DOM elements
+    div.style.alignItems = "center";
     let delButton = document.createElement("button");
     let delButtonText = document.createTextNode("Delete Task");
     delButton.appendChild(delButtonText);
     let finishButton = document.createElement("input");
     finishButton.type = "checkbox";
-    finishButton.style.width = "20px";
-    finishButton.style.height = "20px";
+    finishButton.style.width = "23px";
+    finishButton.style.height = "23px";
     item.appendChild(div);
     div.appendChild(delButton);
     div.appendChild(finishButton);
@@ -134,8 +146,8 @@ function renderTask(task) {
         item.completionStatus = !event.target.value;
     });
 
-    // Clear the input form
-    form.reset();
+    // Clear the input task form
+    taskform.reset();
 }
 
 // Function to remove item from array
@@ -162,8 +174,8 @@ dueSortBtn.addEventListener("click", function(e){
     sortType = "due";
     e.target.style.background = "#000";
     e.target.style.color = "#fff";
-    document.getElementById("rateSort").style.background = "";
-    document.getElementById("rateSort").style.color = "";
+    document.getElementById("rateSort").style.background = "#fff";
+    document.getElementById("rateSort").style.color = "#000";
     taskListArray.sort(function(a, b){
         return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
     });

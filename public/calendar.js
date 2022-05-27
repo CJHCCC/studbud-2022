@@ -80,7 +80,7 @@
   
       // 设置顶部标题栏中的 年、月信息
       var calendarTitle = document.getElementById("calendarTitle");
-      var titleStr = _dateStr.substr(0, 4) + "Year" + _dateStr.substr(4,2) + "月";
+      var titleStr = _dateStr.substr(0, 4) + "Y." + _dateStr.substr(4,2) + "M.";
       calendarTitle.innerText = titleStr;
   
       // 设置表格中的日期数据
@@ -122,7 +122,7 @@
               tds[j].classList.remove('clickMonth');
             }
             e.target.classList.add('clickMonth');
-            // console.log(e.target.getAttribute('data'));
+            console.log(e.target.getAttribute('data'));
           });
       }
     }
