@@ -1,37 +1,43 @@
-let timef = 0;
-let times = 0;
-let timem = 0;
-let zt_ks = false;
-//timer
+let timehour = 0;
+let timemin = 0;
+let timesec = 0;
+let timer_state = false;
+
+//timer logic
 setInterval(() => {
-    if (zt_ks)
-        timem++;
-    if (timem == 60) {
-        timem = 0;
-        timef++;
-        if (timef == 60) {
-            timef = 0;
-            times++;
+    if (timer_state)
+        timesec++;
+    if (timesec == 60) {
+        timesec = 0;
+        timemin++;
+        if (timemin == 60) {
+            timemin = 0;
+            timehour++;
         }
     }
-    document.getElementById("s").innerHTML = times;
-    document.getElementById("f").innerHTML = timef;
-    document.getElementById("m").innerHTML = timem;
+    // replace html s. f. m.
+    document.getElementById("thour").innerHTML = timehour;
+    document.getElementById("tmin").innerHTML = timemin;
+    document.getElementById("tsec").innerHTML = timesec;
 }, 1000);
-//timer
-function bulle(i) {
+
+//timer button
+function controller(i) {
     switch (i) {
+        //start count
         case 0:
-            zt_ks = false;
+            timer_state = true;
             break;
+        // pause count
         case 1:
-            zt_ks = true;
+            timer_state = false;
             break;
+        // cancel count reset
         case 2:
-            zt_ks = false;
-            timef = 0;
-            times = 0;
-            timem = 0;
+            timer_state = false;
+            timemin = 0;
+            timehour = 0;
+            timesec = 0;
             break;
     }
 }

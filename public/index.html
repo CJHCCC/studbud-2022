@@ -32,20 +32,22 @@
       <div style="background-color: #000; height: 1px; width: 93%; margin-top: 12px;"></div>
       <p style="margin: 15px 0"><i class="fas fa-clock" style="font-size: 20px; font-weight: 100;"></i> Timer</p>
       <div class="box">
-        <div id="s" class="time"></div>
+        <div id="thour" class="time"></div>
         <div class="boxx">:</div>
-        <div id="f" class="time"></div>
+        <div id="tmin" class="time"></div>
         <div class="boxx">:</div>
-        <div id="m" class="time"></div>
-      </div>
-      <div class="butt">
-        <button onclick="bulle(1)">Start</button>
-        <button onclick="bulle(0)">Pause</button>
-        <button onclick="bulle(2)">Reset</button>
+        <div id="tsec" class="time"></div>
       </div>
 
-      <p class="textPom" style="margin: 15px 0"><svg t="1652681497988" class="icon" viewBox="0 0 1024 1024" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" p-id="3618" width="24" height="24">
+      <!-- Set button for timer -->
+      <div class="butt">
+        <button onclick="controller(0)">Start</button>
+        <button onclick="controller(1)">Pause</button>
+        <button onclick="controller(2)">Reset</button>
+      </div>
+
+      <p class="textPom" style="margin: 15px 0"><svg t="1652681497988" class="icon" viewBox="0 0 1024 1024"
+          version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3618" width="24" height="24">
           <path
             d="M510.99 260.54c-17.55 0-31.78-14.23-31.78-31.78V100.11c0-17.55 14.23-31.78 31.78-31.78s31.78 14.23 31.78 31.78v128.66c0 17.55-14.23 31.77-31.78 31.77z"
             fill="#2c2c2c" p-id="3619"></path>
@@ -155,7 +157,6 @@
         <button id="taskListButton" type="submit" style="margin-top: 20px;">Submit</button>
       </form>
     </div>
-    <a href="index1.html">Next</a>
   </div>
 </body>
 

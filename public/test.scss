@@ -12,7 +12,7 @@ body {
   background: #F4F9F8;
 }
 
-/* 头部 */
+/* logo */
 .Logo {
   display: flex;
   flex: 1;
@@ -25,12 +25,12 @@ body {
   img {
     width: 200px;
     height: 47.5px;
-    margin-left: 10px;
+    margin-left: 30px;
     padding: 10px;
   }
 }
 
-/* 主内容 */
+/* all fuction */
 .main {
   display: flex;
   flex: 1;
@@ -39,7 +39,7 @@ body {
   margin-top: 20px;
 }
 
-/* 左边布局 */
+/* music and timer */
 .mt {
   display: flex;
   flex-direction: column;
@@ -163,7 +163,7 @@ body {
   }
 }
 
-/* 中间布局 */
+/* center */
 .center {
   display: flex;
   flex-direction: column;
@@ -171,7 +171,7 @@ body {
   max-width: 620px;
   margin: 0 10px;
 
-  /* 时间 */
+  /* calender */
   .date {
     display: flex;
     flex-direction: column;
@@ -212,9 +212,14 @@ body {
       li {
         display: flex;
         margin-top: 30px;
+
+        p {
+          overflow: auto;
+        }
       }
     }
-    #openAll{
+
+    #openAll {
       padding: 2.5px 20px;
       border: 1px #fff solid;
       border-radius: 3px;
@@ -231,7 +236,7 @@ body {
   }
 }
 
-/* 右边布局 */
+/* tasklist */
 .task_list {
   display: flex;
   flex-direction: column;
@@ -249,7 +254,6 @@ body {
     &:hover {
       color: #fff;
       background-color: #000;
-      border: #000 solid;
     }
   }
 
