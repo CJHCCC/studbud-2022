@@ -1,30 +1,29 @@
-// 点击添加任务
+// button add task
 const addTaskBtn = document.getElementById("addTaskList");
 var addTaskContent = document.getElementById("addTaskContent");
 var checkTaskContent = false;
 addTaskContent.style.display = "block";
-addTaskContent.style.top = (addTaskBtn.offsetTop+addTaskBtn.offsetHeight)+"px";
-addTaskContent.style.left = (addTaskBtn.offsetLeft)+"px";
-addTaskBtn.addEventListener("click", function(e){
-    if(checkTaskContent){
-    var addTaskContent = document.getElementById("addTaskContent");
-    addTaskContent.style.display = "block";
-    addTaskContent.style.top = (addTaskBtn.offsetTop+addTaskBtn.offsetHeight)+"px";
-    addTaskContent.style.left = (addTaskBtn.offsetLeft)+"px";
-    checkTaskContent = false;
+addTaskContent.style.top = (addTaskBtn.offsetTop + addTaskBtn.offsetHeight) + "px";
+addTaskContent.style.left = (addTaskBtn.offsetLeft) + "px";
+
+//Close and open
+addTaskBtn.addEventListener("click", function (e) {
+    if (checkTaskContent) {
+        var addTaskContent = document.getElementById("addTaskContent");
+        addTaskContent.style.display = "block";
+        addTaskContent.style.top = (addTaskBtn.offsetTop + addTaskBtn.offsetHeight) + "px";
+        addTaskContent.style.left = (addTaskBtn.offsetLeft) + "px";
+        checkTaskContent = false;
     }
-    else{
+    else {
         var addTaskContent = document.getElementById("addTaskContent");
         addTaskContent.style.display = "none";
         checkTaskContent = true;
-    } 
+    }
 });
-
-
 
 // Basic form DOM elements
 const taskform = document.getElementById("taskform");
-// const button = document.querySelector("#taskform > button")
 
 // Selector for the tasklist output
 var tasklist = document.querySelector("#tasklist > ul");
@@ -37,7 +36,7 @@ var estimatedTimeInput = document.getElementById("estimatedTimeInput");
 var priorityInput = document.getElementById("priorityInput");
 
 // Form submission event listener
-taskform.addEventListener("submit", function(event) {
+taskform.addEventListener("submit", function (event) {
     event.preventDefault();
     let task = taskInput.value;
     let dueDate = dueDateInput.value;
@@ -57,45 +56,44 @@ var taskListArray = [];
 
 // Function to add task with user inputs as parameters
 function addTask(taskDescription, dueDate, estimatedTime, priorityRating, completionTime, completionStatus) {
+    // sort by rate logic high to low
+    // sort by due logic short to long
     let d = new Date();
-    let dateCreated = d.getFullYear();
     let priorityRatingLevel = 0;
-    if(priorityRating === 'Low'){
+    if (priorityRating === 'Low') {
         priorityRatingLevel = 1;
-    }else if(priorityRating === 'Medium'){
+    } else if (priorityRating === 'Medium') {
         priorityRatingLevel = 2;
-    }else if(priorityRating === 'High'){
+    } else if (priorityRating === 'High') {
         priorityRatingLevel = 3;
     }
     let task = {
         id: Date.now(),
         taskDescription,
         dueDate,
-        dateCreated,
         estimatedTime,
         completionTime,
         priorityRating,
         priorityRatingLevel,
-        estimatedTime,
         completionStatus,
     };
     taskListArray.push(task);
-    if (sortType == "due"){
-        taskListArray.sort(function(a, b){
+    if (sortType == "due") {
+        taskListArray.sort(function (a, b) {
             return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
         });
-    }else if (sortType == "rate"){
-        taskListArray.sort(function(a, b){
+    } else if (sortType == "rate") {
+        taskListArray.sort(function (a, b) {
             return b.priorityRatingLevel - a.priorityRatingLevel;
         });
     }
     tasklist.innerHTML = "";
-    taskListArray.forEach(function(task){
+    taskListArray.forEach(function (task) {
         renderTask(task);
     });
 }
 
-// Function to display task on screen
+// Function to display task
 function renderTask(task) {
 
     // Call function - checks if a task has been added
@@ -104,17 +102,17 @@ function renderTask(task) {
     // Create HTML elements
     let item = document.createElement("li");
     item.setAttribute('data-id', task.id);
-    item.innerHTML = task.taskDescription + "<br>"+
-      "Due: "+ task.dueDate+ " " + task.completionTime+"<br>"+
-      "Est. Time: " + task.estimatedTime + "hours" + "<br>"+
-      "Priority: " + task.priorityRating + "<br>";
+    item.innerHTML = task.taskDescription + "<br>" +
+        "Due: " + task.dueDate + " " + task.completionTime + "<br>" +
+        "Est. Time: " + task.estimatedTime + "hours" + "<br>" +
+        "Priority: " + task.priorityRating + "<br>";
 
     tasklist.appendChild(item);
 
     // Give and div. Delet and finish button
     let div = document.createElement("div");
     div.style.marginTop = "20px";
-    div.style.display = "flex"; 
+    div.style.display = "flex";
     div.style.justifyContent = "space-between";
     div.style.alignItems = "center";
     let delButton = document.createElement("button");
@@ -130,7 +128,7 @@ function renderTask(task) {
 
 
     // Event Listeners for DOM elements
-    delButton.addEventListener("click", function(event) {
+    delButton.addEventListener("click", function (event) {
         event.preventDefault();
         let id = event.target.parentElement.getAttribute('data-id');
         let index = taskListArray.findIndex(task => task.id === Number(id));
@@ -139,7 +137,7 @@ function renderTask(task) {
         item.remove();
     })
 
-    finishButton.addEventListener("click", function(event){
+    finishButton.addEventListener("click", function (event) {
         // event.preventDefault();
         let id = event.target.parentElement.getAttribute('data-id');
         let item = taskListArray.find(task => task.id === Number(id));
@@ -167,37 +165,37 @@ function updateEmptyTask() {
     }
 }
 
-// due排序
+// sort by due button
 const dueSortBtn = document.getElementById("dueSort")
 let sortType = "";
-dueSortBtn.addEventListener("click", function(e){
+dueSortBtn.addEventListener("click", function (e) {
     sortType = "due";
     e.target.style.background = "#000";
     e.target.style.color = "#fff";
     document.getElementById("rateSort").style.background = "#fff";
     document.getElementById("rateSort").style.color = "#000";
-    taskListArray.sort(function(a, b){
+    taskListArray.sort(function (a, b) {
         return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
     });
     tasklist.innerHTML = "";
-    taskListArray.forEach(function(task){
+    taskListArray.forEach(function (task) {
         renderTask(task);
     });
 });
 
-// rate排序
+// sort by rate button
 const rateSortBtn = document.getElementById("rateSort");
-rateSortBtn.addEventListener("click", function(e){
+rateSortBtn.addEventListener("click", function (e) {
     sortType = "rate";
     e.target.style.background = "#000";
     dueSortBtn.style.background = "#fff";
     e.target.style.color = "#fff";
     dueSortBtn.style.color = "#000";
-    taskListArray.sort(function(a, b){
+    taskListArray.sort(function (a, b) {
         return b.priorityRatingLevel - a.priorityRatingLevel;
     });
     tasklist.innerHTML = "";
-    taskListArray.forEach(function(task){
+    taskListArray.forEach(function (task) {
         renderTask(task);
     });
 });
