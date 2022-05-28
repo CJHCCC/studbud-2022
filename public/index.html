@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Hello, world!</title>
+  <title>StudBud</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
@@ -124,39 +124,37 @@
 
 
   <div id='addTaskContent' class="page-container">
-    <h1>Tasks</h1>
-    <div id="task-grid">
-      <form id="taskform">
-        <!-- Task input-->
-        <label for="task">Task:</label>
-        <input type="text" name="task" id="taskInput" required>
+    <h2 style="text-align: center;">Tasks Lists</h2>
+    <form id="taskform">
+      <!-- Task input-->
+      <label for="task">Task Name:</label>
+      <input type="text" name="task" id="taskInput" required>
 
-        <!-- Date input -->
-        <label for="dueDate">Due Date: </label>
-        <input type="date" name="dueDate" id="dueDateInput" required>
+      <!-- Date input -->
+      <label for="dueDate">Due Date: </label>
+      <input type="date" name="dueDate" id="dueDateInput" required>
 
-        <!-- Time input -->
-        <label for="completionTime">Completion Time: </label>
-        <input type="time" name="completionTime" id="completionTimeInput">
+      <!-- Time input -->
+      <label for="completionTime">Completion Time: </label>
+      <input type="time" name="completionTime" id="completionTimeInput">
 
-        <!-- Est.time input -->
-        <label for="estimatedTime">Estimated completion time (in hours):</label>
-        <input type="number" name="estimatedTime" id="estimatedTimeInput" required>
+      <!-- Est.time input -->
+      <label for="estimatedTime">Estimated Completion Time (in hours):</label>
+      <input type="number" name="estimatedTime" id="estimatedTimeInput" min="1" required>
 
-        <!-- Priority input-->
-        <label for="priority">Task Priority:</label>
-        <select name="prority" id="priorityInput" required>
-          <option value="">Select one</option>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
+      <!-- Priority input-->
+      <label for="priority">Task Priority:</label>
+      <select name="prority" id="priorityInput" required>
+        <!-- <option value="">Select one</option> -->
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
 
-        <br>
+      <br>
 
-        <button id="taskListButton" type="submit" style="margin-top: 20px;">Submit</button>
-      </form>
-    </div>
+      <button id="taskListButton" type="submit" style="margin-top: 20px;">Submit</button>
+    </form>
   </div>
 </body>
 

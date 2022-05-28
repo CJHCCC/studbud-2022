@@ -78,6 +78,7 @@ function removeItemFromArray(arr, index) {
 }
 
 // Function to hide the 'you haven't added any readings' text
+// and Hide open all button or display
 function updateEmpty() {
     if (readinglistArray.length > 0) {
         document.getElementById('emptyList').style.display = 'none';
@@ -91,6 +92,7 @@ function updateEmpty() {
 //Open all link from reading list
 var openAllBtn = document.getElementById("openAll");
 openAllBtn.addEventListener("click", function () {
+    // check length
     if (readinglistArray.length > 0) {
         readinglistArray.forEach(function (item) {
             window.open(item.readingDescription, '_blank');

@@ -212,6 +212,8 @@ body {
       li {
         display: flex;
         margin-top: 30px;
+        justify-content: space-between;
+        border-bottom: solid #33333342;
 
         p {
           overflow: auto;
@@ -303,7 +305,8 @@ body {
     width: 60%;
     margin-bottom: 10px;
   }
-  select{
+
+  select {
     width: 60%;
     font-size: 15px;
   }
