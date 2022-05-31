@@ -11,19 +11,24 @@ var mt = 0;
 
 const bsetHide = document.getElementById("bsetHide");
 var setHide = document.getElementById("setHide");
+setHide.style.display = "none";
+setHide.style.top = (bsetHide.offsetTop - 10 + bsetHide.offsetHeight) + "px";
+setHide.style.left = (bsetHide.offsetLeft - 150) + "px";
 var checkhide = false;
 
 // hide setting
 bsetHide.addEventListener("click", function (e) {
     var setHide = document.getElementById("setHide");
-    console.log(setHide);
     if (checkhide) {
         setHide.style.display = "none";
         checkhide = false;
-   }
+    }
     else {
         setHide.style.display = "block";
+        setHide.style.top = (bsetHide.offsetTop - 10 + bsetHide.offsetHeight) + "px";
+        setHide.style.left = (bsetHide.offsetLeft - 150) + "px";
         checkhide = true;
+        console.log(setHide.style);
     }
 });
 
