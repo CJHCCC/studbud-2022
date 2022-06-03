@@ -28,6 +28,13 @@ body {
     margin-left: 30px;
     padding: 10px;
   }
+
+  button{
+    font-size: 30px;
+    border: none;
+    background: top;
+    margin-left: 73%;
+  }
 }
 
 /* all fuction */
@@ -45,6 +52,7 @@ body {
   flex-direction: column;
   flex: 1;
   max-width: 320px;
+  max-height: 550px;
   margin-left: 10px;
   padding-left: 20px;
   background-color: #fff;
@@ -178,17 +186,18 @@ body {
     color: #333;
     padding: 12px;
     background-color: #fff;
+    margin-bottom: 10px;
   }
 
   /* readinglist */
   .read_list {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     flex: 1;
     background: #fff;
     left: 40%;
     padding: 10px;
-    margin-top: 10px;
 
     .readingButton {
       padding: 2.5px 20px;
@@ -309,5 +318,89 @@ body {
   select {
     width: 60%;
     font-size: 15px;
+  }
+}
+
+#setHide{
+  label{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    input{
+      width: 23px;
+      height: 23px;
+    }
+  }
+}
+
+
+/* Phone version */
+@media screen and (max-width: 820px){
+  .Logo{
+    img{
+      margin-left: 0;
+      margin-top: 10px;
+      width: 30%;
+      height: 36%;
+    }
+    button{
+      margin-left: 55%;
+    }
+  }
+  .main{
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+    .center{
+      margin: 0 !important;
+      .date{
+        display: none;
+      }
+    }
+    .task_list{
+      margin-bottom: 100px;
+      max-width: none;
+    }
+  }
+
+  .mt{
+    max-width: none;
+    margin-left: 0;
+    .box{
+      margin: 0 56px;
+    }
+    .butt{
+      margin: 30px 68px 0;
+    }
+    .box2{
+      margin: 0 93px 30px;
+    }
+    #p1{
+      margin-left: 125px;
+    }
+    #p2{
+      margin: 15px 45px !important;
+    }
+    #p3{
+      margin: 15px 45px;
+    }
+    .butt2{
+      margin: -25px 68px 0;
+    }
+  }
+
+  .read_list{
+    margin-bottom: 50px !important;
+    #readingInput{
+      width: 70% !important;
+    }
+  }
+
+  .page-container{
+    display: none;
+    width: 100% !important;
+  }
+  #pnhide{
+    display: none !important;
   }
 }
