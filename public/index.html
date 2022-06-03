@@ -15,14 +15,18 @@
 </head>
 
 <body>
+  <!-- Logo and setting button -->
   <div class="Logo">
     <img src="Logo.png" alt="logo">
     <button id="bsetHide"> <i class="fas fa-cog"></i></button>
   </div>
 
-  <div class="main">
 
+  <!-- main function -->
+  <div class="main">
+    <!-- music and timer in one div where in the left -->
     <div class="mt" id="mt">
+      <!-- default music player -->
       <figure id="hmusic">
         <figcaption><i class="fas fa-music"></i> Listen to Lofi Hip Hop:</figcaption>
         <audio controls src="1.mp3">
@@ -31,7 +35,10 @@
         </audio>
         <div style="background-color: #000; height: 1px; width: 93%; margin-top: 12px;"></div>
       </figure>
+
+      <!-- normal timer -->
       <div id="htimer">
+        <!-- Icon and text -->
         <p style="margin: 15px 0"><i class="fas fa-clock" style="font-size: 20px; font-weight: 100;"></i> Timer</p>
         <div class="box">
           <div id="thour" class="time"></div>
@@ -48,6 +55,8 @@
           <button onclick="controller(2)">Reset</button>
         </div>
 
+        <!-- Pomodoro -->
+        <!-- Icon and text -->
         <p class="textPom" style="margin: 15px 0"><svg t="1652681497988" class="icon" viewBox="0 0 1024 1024"
             version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3618" width="24" height="24">
             <path
@@ -68,19 +77,20 @@
               d="M656.18 592.39h-138.1c-23.51 0-42.63-19.12-42.63-42.63V397.85c0-17.55 14.23-31.78 31.78-31.78s31.78 14.23 31.78 31.78v130.99h117.17c17.55 0 31.78 14.23 31.78 31.78s-14.23 31.77-31.78 31.77z"
               fill="#2c2c2c" p-id="3624"></path>
           </svg> Pomodoro</p>
-        <i class="fa-solid fa-tomato"></i>
 
+        <!-- render pomodoro -->
         <div class="box2">
           <div id="pmin" class="time"></div>
           <div class="boxx2">:</div>
           <div id="psec" class="time"></div>
         </div>
-        <p>Round <span id="round">0</span></p>
-        <p style="margin: 15px 0;"><span id="timerWork">Work: </span><input type="text" id="min" value="25"></p>
+        <p id="p1">Round <span id="round">0</span></p>
+        <p id="p2" style="margin: 15px 0;"><span id="timerWork">Work: </span><input type="text" id="min" value="25"></p>
         <p class="needH">sec:<input type="text" id="sec" value="0"></p>
-        <p style="margin-bottom: 15px;"><span id="timerBreak">Break:</span><input type="text" id="br" value="5"></p>
+        <p id="p3" style="margin-bottom: 15px;"><span id="timerBreak">Break:</span><input type="text" id="br" value="5"></p>
         <br />
 
+        <!-- Set button for timer -->
         <div class="butt2">
           <input type="button" id="btnStart" value="Start">
           <input type="button" id="btnPause" value="Pause">
@@ -89,37 +99,47 @@
       </div>
     </div>
 
+    <!-- Calendar and reading list in the center part -->
     <div class="center">
-
+      <!-- render calendar -->
       <div class="date" id="hcalendar">
         <div class='calendar' id='calendar'>
         </div>
       </div>
-
+      <!-- render reading list -->
       <div class="read_list" id="hreading">
+
         <form id="readingform">
+          <!-- Icon and text and user input-->
           <i class="fas fa-book-reader"></i>
           <label for="reading">Reading List Creator:</label>
           <br>
           <input type="text" name="reading" style="width: 79%;" id="readingInput" required>
-
-          <button type="submit" class="readingButton">Submit</button>
+          <!-- Submit button -->
+          <button type="submit" class="readingButton" id = "readingsub">Submit</button>
         </form>
+
+        <!-- render reading list -->
         <div id="readinglist">
           <p id="emptyList">You have not added any reading yet.</p>
-          <ul>
+          <ul id="readinglist_render">
           </ul>
+          <!-- Open all link button -->
           <button id="openAll" style="display: none; margin: 0 auto; margin-top: 15px;">OPEN ALL LINK</button>
         </div>
       </div>
     </div>
 
+    <!-- Task list is a single part in the right side -->
     <div class="task_list" id="htask">
+      <!-- Two sort button Due and Rate -->
       <div class="sort">
         <button id="dueSort">Due</button>
         <button id="rateSort">Rate</button>
       </div>
+      <!-- Icon and text -->
       <button id="addTaskList">Add Task <i class="fas fa-plus-circle"></i></button>
+      <!-- render tasklist -->
       <div id="tasklist">
         <p id="emptyTaskList">You have not added any tasks yet.</p>
         <ul></ul>
@@ -127,9 +147,10 @@
     </div>
   </div>
 
-
+  <!-- Tasklist form for add task -->
   <div id='addTaskContent' class="page-container">
-    <h2 style="text-align: center;">Tasks Lists</h2>
+    <!-- Title Text -->
+    <h2 style="text-align: center;">Task List</h2>
     <form id="taskform">
       <!-- Task input-->
       <label for="task">Task Name:</label>
@@ -150,26 +171,26 @@
       <!-- Priority input-->
       <label for="priority">Task Priority:</label>
       <select name="prority" id="priorityInput" required>
-        <!-- <option value="">Select one</option> -->
         <option value="High">High</option>
         <option value="Medium">Medium</option>
         <option value="Low">Low</option>
       </select>
-
       <br>
-
+      <!-- submit button -->
       <button id="taskListButton" type="submit" style="margin-top: 20px;">Submit</button>
     </form>
   </div>
 
+  <!-- Sethide form. From left the right. Top to bottom -->
   <div id="setHide">
+    <h3>Setting</h3>
+    <br>
     <label>Music<input id="bhmusic" type="checkbox" checked="checked"></label>
     <label>Timer<input id="bhtimer" type="checkbox" checked="checked"></label>
-    <label>Calendar<input id="bhcalendar" type="checkbox" checked="checked"></label>
+    <label id="pnhide">Calendar<input id="bhcalendar" type="checkbox" checked="checked"></label>
     <label>Reading List<input id="bhreading" type="checkbox" checked="checked"></label>
     <label>Task List<input id="bhtask" type="checkbox" checked="checked"></label>
   </div>
-
 </body>
 
 <script type='text/javascript' src="pomodoro.js"></script>
@@ -179,7 +200,5 @@
 <script type="text/javascript" src="readinglist.js"></script>
 <script src="setHide.js"></script>
 </body>
-
-<!--<script src="script.js"></script>!-->
 
 </html>
