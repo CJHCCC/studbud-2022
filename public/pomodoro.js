@@ -80,7 +80,7 @@ timer = setInterval(function () {
 
             // Long break
             else if (round > 0) {
-                if (round % 4 == 0 & roundControll) {
+                if (round % 4 == 0 && roundControll) {
                     alert('Long break now')
                     PomM.value = 0;
                     PomB.value = 30;
