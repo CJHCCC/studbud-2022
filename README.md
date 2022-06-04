@@ -110,5 +110,13 @@ Duplicate two task list may confuse the user's attention. So I remove one of the
 | Can add the reading sources link | Reading list | User can add or delete the reading link in the reading list| Height |
 | Task list can list by due and priority| Task list| User can add tasks to the task list. And can choose the sort method | Height |
 | Can hide some function that user won't use | Setting | User can click the selection to control which function will work in the interaction | Medium |
+
 # References
 
+Brillion., Monma & Doolie T.(2020) Bedtime Stories Pt. 2, 15. Aurora. Lofi records. Retrieved from https://lofigirl.com/blogs/releases/bedtime-stories-pt-2
+
+Font Awesome. (2022). Retrieved May 16, 2022, from https://fontawesome.com/v5/icons/500px?s=brands 
+
+申 锦祥. (2021). JS CSS+html实现简单的日历. 脚本之家. Retrieved May 18, 2022, from https://www.jb51.net/article/88600.htm 
+
+Code of tasklist and readinglist leraning from tutorial.
