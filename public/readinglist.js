@@ -22,13 +22,11 @@ var readinglistArray = [];
 
 // Function to add reading with user inputs as parameters
 function addreading(readingDescription) {
-    let d = new Date();
-    let dateCreated = d.getFullYear();
     let reading = {
         readingDescription,
     };
     readinglistArray.push(reading);
-    console.log(readinglistArray);
+    // console.log(readinglistArray);
     renderreading(reading);
 }
 
