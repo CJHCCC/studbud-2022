@@ -15,7 +15,7 @@ The web prototype is suitable for iPhoneX(375 ✖️ 812) and Laptop(1400 ✖️
 
 # User feedback -- Mockup -- Iteration
 ### Timer and Pomodoro
-![mockup Timer and Pomodoro](readme/mTimer.png)
+![mockup Timer and Pomodoro](readme/mtimer.png)
 * Add Pause button
 * Change the order of button
 
@@ -47,7 +47,7 @@ Duplicate two task list may confuse the user's attention. So I remove one of the
 
 # Fianl Web Application
 ### Music and Timer and Pomodoro
-![Music Player and Timer and Pomodoro](readme/timer.png)
+![Music Player and Timer and Pomodoro](readme/Timer.png)
 * When the Pomodoro working the work one will be red which can help user to know where they are going. After round 4 will have a long time break.
 <br><br>
 
